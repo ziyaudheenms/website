@@ -2,6 +2,7 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -129,4 +130,16 @@
   html {
     @apply font-sans;
     }
+}
+
+.dotted-underline {
+  background-image: radial-gradient(
+    circle,
+    var(--muted-foreground) 1px,
+    transparent 1.25px
+  );
+  background-position: left bottom 0;
+  background-repeat: repeat-x;
+  background-size: 6px 3px;
+  padding-bottom: 5px;
 }
