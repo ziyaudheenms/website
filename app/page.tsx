@@ -1,7 +1,5 @@
 import Header from "@/components/structure/header"
 import Work from "@/components/structure/work"
-import Icon from "@/components/style/icon"
-import { IconBrandMedium } from "@tabler/icons-react"
 
 export default function Page() {
   return (

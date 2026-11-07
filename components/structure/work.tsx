@@ -1,37 +1,72 @@
-import { IconChevronDown, IconDeviceLaptop, IconNetwork } from '@tabler/icons-react'
+"use client"
+
+import { IconFile3d, IconNetwork } from "@tabler/icons-react"
+import { useState } from "react"
+
+import Project from "./project"
 
 function Work() {
-  return (
-    <div className=" w-full justify-between py-7 items-start">
-        <div className='flex items-center gap-2'>
-        
-        <h1 className='font-sans text-xl text-foreground tracking-wide font-medium'>Things What I Do</h1>
-        </div>
-        <div className='py-8'>
-            <div className="relative flex items-center gap-3 pr-10">
-                <span
-              className='flex size-9 shrink-0 items-center justify-center rounded-[7px] shadow-xl/30  [&>svg]:size-6'
-              style={{ backgroundColor: '#E61C98' }}
-            >
-                <IconNetwork className="text-white"/>
-            </span>
-            <div className="flex min-w-0 items-baseline gap-2">
-                <h3 className="shrink-0 font-sans text-lg font-semibold tracking-wide text-foreground">PulseGrid</h3>
-                <h4 className="truncate text-base tracking-wide text-muted-foreground">
-                    Be Updated With Following Digital Minimalism
-                </h4>
-            </div>
+  const [openProject, setOpenProject] = useState<string | null>("pulsegrid-1")
 
-            <button
-                type="button"
-                className="absolute right-0 top-1/2 flex size-8 -translate-y-1/2 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
-                aria-label="Expand PulseGrid"
-            >
-                <IconChevronDown className="size-5" stroke={1.5} />
-            </button>
-            </div>
-        </div>
-    </div>
+  const toggleProject = (id: string) => {
+    setOpenProject((current) => (current === id ? null : id))
+  }
+
+  return (
+    <section className="w-full pt-1">
+      <h1 className="font-sans text-xl font-medium tracking-wide text-foreground">
+        Things What I Do
+      </h1>
+
+      <Project
+        id="pulsegrid-1"
+        icon={<IconNetwork className="size-6 text-white" stroke={2} />}
+        title="PulseGrid"
+        caption="Be Updated With Following Digital Minimalism"
+        image="/github.png"
+        description="Your one-stop solution to stay updated in a fast-pacing world—giving you a clear picture of what's happening, every 8 hours. Digital Minimalism followed information aggregator platform you need."
+        link="https://github.com/ziyaudheenms/PulseGrid"
+        color="#d80205"
+        isOpen={openProject === "pulsegrid-1"}
+        onToggle={toggleProject}
+      />
+      <Project
+        id="filebox"
+        icon={<IconFile3d className="size-6 text-white" stroke={2} />}
+        title="File Box"
+        caption="Cloud File Storage With End to End Encryption"
+        image="/filebox.png"
+        description="FileBox is an Software that deals with the cloud storage of files.High-performance cloud storage and collaboration software for modern needs. Sync, share, and manage your assets in one place."
+        link="shy-maple-ebmu.deployhtml.com/"
+        color="#0021fc"
+        isOpen={openProject === "filebox"}
+        onToggle={toggleProject}
+      />
+      <Project
+        id="cloudCanvas"
+        icon={<IconNetwork className="size-6 text-white" stroke={2} />}
+        title="Cloud Canvas"
+        caption="Ultimate solution for non techies to transform your media"
+        image="/claudCanvas.png"
+        description="Complex transformations with generative AI for media is made easy for common people with Our Platform CLAUDCANVAS. It's a platform through which we can perform various types of transformations we need using the capabilities we provide through AI. Through CLAUDCANVAS we can perform what ever changes we need in our images , videos and audios."
+        link="https://landing-claudcanvas.vercel.app/"
+        color="#fc4f00"
+        isOpen={openProject === "cloudCanvas"}
+        onToggle={toggleProject}
+      />
+      <Project
+        id="pulsegrid-4"
+        icon={<IconNetwork className="size-6 text-white" stroke={2} />}
+        title="Parlez AI"
+        caption="Get Ultimate Interview Practice & filter out with contineous evaluation"
+        image="/parlezAI.png"
+        description="introducing a virtual interviewer powered by LLM so that to get a great knowledge based interviewer. Since this is a virtual interviewer you can practice any interviews as much as you need with the complete seriousness of the job , because we will provide the virtual interviewer with the job descriptions and other details."
+        link="https://www.youtube.com/watch?v=l2oSWCDAIa4"
+        color="#000"
+        isOpen={openProject === "pulsegrid-4"}
+        onToggle={toggleProject}
+      />
+    </section>
   )
 }
 

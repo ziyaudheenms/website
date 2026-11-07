@@ -1,10 +1,10 @@
-import { IconBrandGithub, IconBrandMedium, IconCapProjecting, IconFile } from "@tabler/icons-react"
+import { IconBrandGithub, IconBrandMedium, IconFile } from "@tabler/icons-react"
 import Icon from "../style/icon"
 import Profile from "../style/profile"
 
 function Header() {
   return (
-    <header className=" w-full justify-between py-7 items-start ">
+    <header className=" w-full justify-between py-9 items-start ">
       <div className="mb-7 flex items-center gap-4">
         <Profile />
         <h1 className="font-sans text-3xl font-medium tracking-wide text-foreground">
