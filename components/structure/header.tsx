@@ -4,7 +4,7 @@ import Profile from "../style/profile"
 
 function Header() {
   return (
-    <header className=" w-full justify-between py-7 items-start">
+    <header className=" w-full justify-between py-7 items-start ">
       <div className="mb-7 flex items-center gap-4">
         <Profile />
         <h1 className="font-sans text-3xl font-medium tracking-wide text-foreground">
@@ -24,7 +24,7 @@ function Header() {
       
       I’m language-agnostic, treating tools and languages as instruments, and can adapt quickly to any stack, architecture, or ecosystem the problem demands.
       </p>
-        <p className=" text-lg tracking-wide text-muted-foreground my-7">
+        <p className=" text-lg tracking-wide text-muted-foreground">
           Exploring AI and its applications in 
           
            <Icon
