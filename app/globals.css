@@ -130,6 +130,212 @@
   html {
     @apply font-sans;
     }
+
+    .glassy-button {
+      --button-color: var(--primary);
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      border-color: color-mix(in srgb, var(--button-color) 35%, white);
+      background-image:
+        radial-gradient(circle at 18% 42%, rgba(255, 255, 255, 0.18) 0 1px, transparent 2px),
+        radial-gradient(circle at 74% 68%, rgba(255, 255, 255, 0.12) 0 1px, transparent 2px),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.02) 48%, rgba(0, 0, 0, 0.04)),
+        linear-gradient(135deg, color-mix(in srgb, var(--button-color), white 22%), var(--button-color));
+      box-shadow:
+        inset 0 2px 3px rgba(255, 255, 255, 0.72),
+        inset 0 -5px 8px rgba(0, 0, 0, 0.16),
+        inset 7px 0 9px rgba(255, 255, 255, 0.08),
+        inset -7px 0 9px rgba(0, 0, 0, 0.08);
+      backdrop-filter: blur(9px) saturate(1.18);
+      transition: transform 180ms ease, filter 180ms ease, box-shadow 180ms ease;
+    }
+
+    .glassy-button::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 3px 5px auto;
+      height: 42%;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0));
+      pointer-events: none;
+    }
+
+    .glassy-button:hover {
+      filter: brightness(1.07) saturate(1.08);
+      transform: translateY(-1px);
+      box-shadow:
+        inset 0 2px 3px rgba(255, 255, 255, 0.72),
+        inset 0 -5px 8px rgba(0, 0, 0, 0.16);
+    }
+
+    .glassy-button:active {
+      transform: translateY(2px) scale(0.985);
+      filter: brightness(0.96);
+      box-shadow:
+        inset 0 2px 5px rgba(0, 0, 0, 0.22);
+    }
+
+    .glassy-button-primary {
+      --button-color: oklch(0.205 0 0);
+    }
+
+    .glassy-logo {
+      --logo-color: var(--primary);
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.28)),
+        color-mix(in srgb, var(--logo-color) 12%, white);
+      box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.9),
+        inset 0 -4px 7px color-mix(in srgb, var(--logo-color) 10%, transparent),
+        0 8px 18px color-mix(in srgb, var(--logo-color) 14%, transparent);
+      backdrop-filter: blur(8px) saturate(1.08);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .glassy-logo::before {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      inset: 3px 5px auto;
+      height: 38%;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.05) 48%, rgba(255, 255, 255, 0));
+      pointer-events: none;
+      filter: blur(1px);
+      transform: scaleX(0.92);
+    }
+
+    .dark .glassy-logo {
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.03)),
+        color-mix(in srgb, var(--logo-color) 18%, transparent);
+    }
+
+    .glassy-project-icon {
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.02) 48%, rgba(0, 0, 0, 0.08)),
+        var(--logo-color);
+      box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.62),
+        inset 0 -3px 5px rgba(0, 0, 0, 0.14),
+        0 8px 18px color-mix(in srgb, var(--logo-color) 20%, transparent);
+    }
+
+    .glassy-project-icon::before {
+      inset: 0;
+      height: 100%;
+      border-radius: inherit;
+      background:
+        radial-gradient(ellipse 85% 55% at 50% 5%, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0) 78%);
+      filter: none;
+      transform: none;
+      opacity: 0.9;
+    }
+
+    .dark .glassy-project-icon {
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.02) 48%, rgba(0, 0, 0, 0.14)),
+        var(--logo-color);
+    }
+
+    .achievement-deck {
+      position: relative;
+      display: flex;
+      height: 260px;
+      gap: 8px;
+      perspective: 1200px;
+    }
+
+    .achievement-accordion {
+      display: none;
+    }
+
+    .achievement-card {
+      position: relative;
+      flex: none;
+      min-width: 48px;
+      width: 48px;
+      height: 260px;
+      border-color: color-mix(in srgb, var(--achievement-color) 18%, var(--border));
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.24)),
+        var(--card);
+      box-shadow:
+        inset 0 1px rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(12px) saturate(1.08);
+      transform-origin: center top;
+      transition: flex 720ms cubic-bezier(0.16, 1, 0.3, 1), border-color 300ms ease, box-shadow 300ms ease;
+    }
+
+    .achievement-card-active {
+      min-width: 0;
+    }
+
+    @media (max-width: 639px) {
+      .achievement-deck {
+        display: none;
+      }
+
+      .achievement-accordion {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .achievement-accordion-item {
+        border-color: color-mix(in srgb, var(--achievement-color) 18%, var(--border));
+        background: var(--card);
+      }
+
+      .achievement-accordion-item-active {
+        background:
+          linear-gradient(145deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.24)),
+          var(--card);
+        box-shadow: inset 0 1px rgba(255, 255, 255, 0.78);
+      }
+
+      .achievement-deck {
+        gap: 6px;
+      }
+
+      .achievement-card {
+        min-width: 24px;
+        width: 24px;
+        flex-basis: 24px;
+      }
+
+      .achievement-card-active {
+        min-width: 0;
+      }
+    }
+
+    .achievement-tab-title {
+      color: var(--achievement-color);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+
+    .achievement-glow {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent 34%);
+      pointer-events: none;
+    }
+
+    .dark .achievement-card {
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.025)),
+        var(--card);
+    }
 }
 
 .dotted-underline {
@@ -142,4 +348,18 @@
   background-repeat: repeat-x;
   background-size: 6px 3px;
   padding-bottom: 5px;
+}
+
+.dotted-separator {
+  height: 1px;
+  border: 0;
+  background-image: radial-gradient(
+    circle at center,
+    color-mix(in oklch, var(--muted-foreground) 50%, transparent) 1px,
+    color-mix(in oklch, var(--muted-foreground) 50%, transparent) 1px,
+    transparent 1.5px
+  );
+  background-position: left center;
+  background-repeat: repeat-x;
+  background-size: 7px 3px;
 }

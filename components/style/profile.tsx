@@ -9,7 +9,7 @@ function Profile() {
           alt="Profile Picture"
           width={72}
           height={72}
-          className="aspect-square rounded-full object-cover"
+          className="size-16 rounded-full object-cover sm:size-[72px]"
         />
     </div>
   )

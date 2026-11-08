@@ -59,7 +59,7 @@ function Icon({ link, previewImage, backgroundColor, icon, label }: IconProps) {
               )}
             </motion.span>
             <span
-              className='relative top-[0.12em] flex size-[1em] shrink-0 self-baseline items-center justify-center rounded-[4px] shadow-xl/30 [&>svg]:size-full'
+              className='relative top-[0.12em] hidden size-[1em] shrink-0 self-baseline items-center justify-center rounded-[4px] shadow-xl/30 sm:flex [&>svg]:size-full'
               style={{ backgroundColor }}
             >
                 {icon}

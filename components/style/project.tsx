@@ -70,20 +70,20 @@ function Project({
         aria-expanded={isOpen}
       >
         <span
-          className="flex size-11 shrink-0 items-center justify-center rounded-[7px] shadow-lg"
+          className="glassy-logo glassy-project-icon flex size-11 shrink-0 items-center justify-center rounded-[7px] border"
           style={{
-            backgroundColor: color,
-            boxShadow: `0 10px 24px ${withOpacity(color, 0.2)}`,
-          }}
+            borderColor: `color-mix(in srgb, ${color} 45%, white)`,
+            "--logo-color": color,
+          } as CSSProperties}
         >
           {icon}
         </span>
 
         <span className="min-w-0 flex-1">
-          <span className="font-sans text-[19px] font-semibold tracking-wide text-foreground">
+          <span className="font-sans text-[15px] font-semibold tracking-wide text-foreground sm:text-[19px]">
             {title}
           </span>
-          <span className="mt-0.5 block text-sm leading-5 tracking-wide text-muted-foreground sm:ml-2 sm:inline sm:text-base">
+          <span className="mt-0.5 block text-xs leading-4 tracking-wide text-muted-foreground sm:ml-2 sm:inline sm:text-base sm:leading-5">
             {caption}
           </span>
         </span>
@@ -104,21 +104,16 @@ function Project({
       >
         <div className="min-h-0 overflow-hidden">
           <div className="ml-14 mt-5 w-[calc(100%-56px)] origin-top">
-            <motion.div
-              className="w-full overflow-hidden rounded-xl"
-              initial={false}
-              animate={{ height: isOpen ? 320 : 0 }}
-              transition={{ height: { duration: 0.42, ease: [0.22, 1, 0.36, 1] } }}
-            >
+            <div className="h-[220px] w-full overflow-hidden rounded-xl sm:h-[320px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={image}
                 alt={`${title} project preview`}
                 className="h-full w-full object-cover object-top"
               />
-            </motion.div>
+            </div>
 
-            <p className="py-4 text-lg tracking-wide text-muted-foreground">
+            <p className="py-3 text-sm leading-6 tracking-wide text-muted-foreground sm:py-4 sm:text-lg sm:leading-relaxed">
               {description}
             </p>
 
@@ -126,11 +121,12 @@ function Project({
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block cursor-pointer rounded-lg border px-5 py-1 font-sans tracking-normal text-white shadow-xl"
+              className="glassy-button inline-block cursor-pointer rounded-full border px-5 py-1 font-sans tracking-normal text-white"
               style={{
                 backgroundColor: color,
                 borderColor: withOpacity(color, 0.5),
-              }}
+                "--button-color": color,
+              } as CSSProperties}
               whileTap={{
                 scale: [1, 0.94, 1.025, 1],
                 backgroundColor: pressedColor,
@@ -141,9 +137,9 @@ function Project({
                 ease: "easeInOut",
               }}
             >
-              <span className="flex items-center gap-2 text-lg tracking-wide">
+              <span className="flex items-center gap-1.5 text-sm tracking-wide sm:gap-2 sm:text-lg">
                 Visit {title}
-                <IconArrowUpRight className="mb-0.5 size-5" />
+                <IconArrowUpRight className="mb-0.5 size-4 sm:size-5" />
               </span>
             </motion.a>
           </div>

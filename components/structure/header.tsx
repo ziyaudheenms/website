@@ -1,17 +1,46 @@
-import { IconBrandGithub, IconBrandMedium, IconFile } from "@tabler/icons-react"
+import {
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconBrandMedium,
+  IconBrandX,
+  IconFile,
+} from "@tabler/icons-react"
 import Icon from "../style/icon"
 import Profile from "../style/profile"
 
 function Header() {
+  const socialLinks = [
+    { label: "GitHub", href: "https://github.com/ziyaudheenms", icon: IconBrandGithub },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/ziyaudheen-ms-b73a75337/", icon: IconBrandLinkedin },
+    { label: "Medium", href: "https://medium.com/@ziyaudheenms", icon: IconBrandMedium },
+    { label: "X", href: "https://x.com/ziyaudheenms", icon: IconBrandX },
+  ]
+
   return (
-    <header className=" w-full justify-between py-9 items-start ">
-      <div className="mb-7 flex items-center gap-4">
+    <header className="w-full items-start justify-between py-7 sm:py-9">
+      <div className="flex items-center gap-3 sm:gap-4">
         <Profile />
-        <h1 className="font-sans text-3xl font-medium tracking-wide text-foreground">
-          Ziyaudheen M S
-        </h1>
+        <div className="min-w-0">
+          <h1 className="font-sans text-2xl font-medium tracking-wide text-foreground sm:text-3xl">
+            Ziyaudheen M S
+          </h1>
+          <div className="-ml-1.5 mt-1 flex items-center gap-1">
+            {socialLinks.map(({ label, href, icon: SocialIcon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="rounded-lg p-1.5 text-muted-foreground transition-colors duration-200 hover:bg-muted/60 hover:text-foreground"
+              >
+                <SocialIcon className="size-5" stroke={1.8} />
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
-      <p className=" text-lg tracking-wide text-muted-foreground my-7">
+      <p className="my-6 text-base leading-relaxed tracking-wide text-muted-foreground sm:text-lg sm:leading-normal">
         I am a software engineer solving problems by building thoughtful, useful products. I enjoy exploring new technologies and sharing what I learn through 
         
         <Icon
@@ -24,7 +53,7 @@ function Header() {
       
       I’m language-agnostic, treating tools and languages as instruments, and can adapt quickly to any stack, architecture, or ecosystem the problem demands.
       </p>
-        <p className=" text-lg tracking-wide text-muted-foreground">
+        <p className="text-base leading-relaxed tracking-wide text-muted-foreground sm:text-lg sm:leading-normal">
           Exploring AI and its applications in 
           
            <Icon

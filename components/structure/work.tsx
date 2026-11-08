@@ -1,9 +1,9 @@
 "use client"
 
-import { IconFile3d, IconNetwork } from "@tabler/icons-react"
+import { IconCloudComputing, IconFile3d, IconNetwork, IconRobotFace } from "@tabler/icons-react"
 import { useState } from "react"
 
-import Project from "./project"
+import Project from "../style/project"
 
 function Work() {
   const [openProject, setOpenProject] = useState<string | null>("pulsegrid-1")
@@ -13,8 +13,8 @@ function Work() {
   }
 
   return (
-    <section className="w-full pt-1">
-      <h1 className="font-sans text-xl font-medium tracking-wide text-foreground">
+    <section className="w-full py-9">
+      <h1 className="font-sans text-lg font-medium tracking-wide text-foreground sm:text-xl">
         Things What I Do
       </h1>
 
@@ -44,7 +44,7 @@ function Work() {
       />
       <Project
         id="cloudCanvas"
-        icon={<IconNetwork className="size-6 text-white" stroke={2} />}
+        icon={<IconCloudComputing className="size-6 text-white" stroke={2} />}
         title="Cloud Canvas"
         caption="Ultimate solution for non techies to transform your media"
         image="/claudCanvas.png"
@@ -56,7 +56,7 @@ function Work() {
       />
       <Project
         id="pulsegrid-4"
-        icon={<IconNetwork className="size-6 text-white" stroke={2} />}
+        icon={<IconRobotFace className="size-6 text-white" stroke={2} />}
         title="Parlez AI"
         caption="Get Ultimate Interview Practice & filter out with contineous evaluation"
         image="/parlezAI.png"
