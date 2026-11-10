@@ -103,7 +103,7 @@ function Project({
         transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="min-h-0 overflow-hidden">
-          <div className="ml-14 mt-5 w-[calc(100%-56px)] origin-top">
+          <div className="mt-5 w-full origin-top sm:ml-14 sm:w-[calc(100%-56px)]">
             <div className="h-[220px] w-full overflow-hidden rounded-xl sm:h-[320px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img

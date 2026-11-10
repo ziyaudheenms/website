@@ -13,7 +13,7 @@ interface IconProps {
 function Icon({ link, previewImage, backgroundColor, icon, label }: IconProps) {
   return (
         <motion.a
-          className='mx-2 dotted-underline relative inline-flex cursor-pointer items-baseline gap-1 whitespace-nowrap text-foreground'
+          className="mx-1 dotted-underline relative inline cursor-pointer align-baseline text-foreground sm:mx-2 sm:inline-flex sm:items-baseline sm:gap-1 sm:whitespace-nowrap"
           href={link}
           target="_blank"
           rel="noopener noreferrer"
@@ -64,7 +64,7 @@ function Icon({ link, previewImage, backgroundColor, icon, label }: IconProps) {
             >
                 {icon}
             </span>
-            <span className="leading-none text-lg tracking-wide">{label}</span>
+            <span className="text-base leading-[inherit] tracking-wide sm:text-lg sm:leading-none">{label}</span>
         </motion.a>
   )
 }

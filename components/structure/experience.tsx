@@ -16,28 +16,28 @@ function Experience() {
           description="Training 80+ students with the latest technological skills that are emerging in this fast growing world with assigning them with projects and tech sessions for making the students capable to move forward in this fast growing world."
           attachments={[
             {
-              title: "Student Projects",
-              description: "Technology-focused projects built with students.",
-              image: "/github.png",
-              link: "https://github.com/ziyaudheenms",
+              title: "Vidmeet",
+              description: "A full stack solution for video conference platform",
+              image: "/veedmeet.png",
+              link: "https://github.com/ziyaudheenms/VIDMEET",
             },
             {
-              title: "File Box",
-              description: "Cloud storage concepts and project sessions.",
-              image: "/filebox.png",
-              link: "https://github.com/ziyaudheenms",
+              title: "Amigo AI",
+              description: "amigo AI acts as your virtual teacher and study companion.",
+              image: "/amigo.png",
+              link: "https://github.com/ziyaudheenms/Amigo",
             },
             {
-              title: "Cloud Canvas",
-              description: "Media transformation sessions using AI tools.",
-              image: "/claudCanvas.png",
-              link: "https://landing-claudcanvas.vercel.app/",
+              title: "Euphoria",
+              description: "Market place to buy cloths",
+              image: "/euphoria.png",
+              link: "https://euphoria-react-gamma.vercel.app/",
             },
             {
-              title: "Parlez AI",
-              description: "Interview practice powered by generative AI.",
-              image: "/parlezAI.png",
-              link: "https://www.youtube.com/watch?v=l2oSWCDAIa4",
+              title: "DB Analyser",
+              description: "Communicate in your language sql replies with data you need",
+              image: "/db.png",
+              link: "https://github.com/ziyaudheenms/DB-ANALYZER",
             },
           ]}
         />

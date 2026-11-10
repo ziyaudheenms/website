@@ -23,7 +23,7 @@ function Work() {
         icon={<IconNetwork className="size-6 text-white" stroke={2} />}
         title="PulseGrid"
         caption="Be Updated With Following Digital Minimalism"
-        image="/github.png"
+        image="/pulsegrid.png"
         description="Your one-stop solution to stay updated in a fast-pacing world—giving you a clear picture of what's happening, every 8 hours. Digital Minimalism followed information aggregator platform you need."
         link="https://github.com/ziyaudheenms/PulseGrid"
         color="#d80205"

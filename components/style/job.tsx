@@ -37,30 +37,29 @@ function Job({
 
   return (
     <div className="mt-3">
-      <div className="-mx-3 flex items-center justify-between gap-2 px-3 transition-colors sm:-mx-4 sm:gap-4 sm:px-4">
-        <div className="flex min-w-0 flex-1 items-center gap-2.5 sm:gap-3">
-          <span
-            className="glassy-logo flex size-12 shrink-0 items-center justify-center rounded-xl border sm:size-14"
-            style={{
-              borderColor: `color-mix(in srgb, ${color} 22%, white)`,
-              "--logo-color": color,
-            } as CSSProperties}
+      <div className="-mx-3 grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-x-3 px-3 transition-colors sm:-mx-4 sm:gap-x-4 sm:px-4">
+        <span
+          className="glassy-logo col-start-1 row-start-1 flex size-12 shrink-0 items-center justify-center rounded-xl border sm:size-14"
+          style={{
+            borderColor: `color-mix(in srgb, ${color} 22%, white)`,
+            "--logo-color": color,
+          } as CSSProperties}
+        >
+          <Image src={logo} alt={`${company} logo`} height={44} width={44} className="relative z-[1] size-10 rounded-lg object-contain sm:size-11" />
+        </span>
+
+        <div className="col-span-3 col-start-1 row-start-2 mt-2 min-w-0 sm:col-span-1 sm:col-start-2 sm:row-start-1 sm:mt-0">
+          <p
+            className="truncate text-[10px] font-semibold uppercase tracking-[0.14em] sm:text-xs sm:tracking-[0.18em]"
+            style={{ color }}
           >
-            <Image src={logo} alt={`${company} logo`} height={44} width={44} className="relative z-[1] size-10 object-contain rounded-lg sm:size-11" />
-          </span>
-          <div className="min-w-0">
-            <p
-              className="truncate text-[10px] font-semibold uppercase tracking-[0.14em] sm:text-xs sm:tracking-[0.18em]"
-              style={{ color }}
-            >
-              {company}
-            </p>
-            <h2 className="truncate text-base font-medium tracking-wide text-foreground sm:text-lg">{role}</h2>
-          </div>
+            {company}
+          </p>
+          <h2 className="break-words text-base font-medium tracking-wide text-foreground sm:truncate sm:text-lg">{role}</h2>
         </div>
 
         <span
-          className="glassy-button ml-auto shrink-0 cursor-pointer rounded-full border px-2.5 py-1 text-xs font-medium tracking-wide text-white sm:px-4 sm:text-base"
+          className="glassy-button col-start-3 row-start-1 shrink-0 cursor-pointer rounded-full border px-2.5 py-1 text-xs font-medium tracking-wide text-white sm:px-4 sm:text-base"
           style={{
             backgroundColor: color,
             borderColor: `color-mix(in srgb, ${color} 50%, white)`,
@@ -71,7 +70,7 @@ function Job({
         </span>
       </div>
 
-      <div className="ml-[60px] sm:ml-[68px]">
+      <div className="sm:ml-[68px]">
         <p className="pt-1 text-sm leading-6 tracking-wide text-muted-foreground sm:text-lg sm:leading-relaxed">{description}</p>
 
         {visibleAttachments.length > 0 && (
@@ -82,7 +81,7 @@ function Job({
               onClick={() => setAttachmentsOpen((open) => !open)}
               aria-expanded={attachmentsOpen}
             >
-              <span className="text-base font-medium tracking-wide text-foreground sm:text-lg">Attachments</span>
+              <span className="text-base font-medium tracking-wide text-foreground sm:text-lg">Works</span>
               <motion.span animate={{ rotate: attachmentsOpen ? 180 : 0 }}>
                 <IconChevronDown className="size-5 text-muted-foreground" stroke={1.5} />
               </motion.span>
